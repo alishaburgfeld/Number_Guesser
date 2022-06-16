@@ -1,7 +1,8 @@
+let count=0     //initially had this inside the function, but it was getting reset every time the button was pushed... would like to figure out a way to not create a global variable.
+let randomNumber=Math.floor(Math.random()*100)      //same issue as above
 function userGuess(event) {
     event.preventDefault();      //not working for some reason
     // console.log("Welcome to the Number Guessing Game! The computer has selected a number, it's your job to guess it!")
-    let randomNumber=Math.floor(Math.random()*100)
     // console.log(`randomnumber: ${randomNumber}`)
     // let guess=document.getElementById("form")        //still don't really understand why its not this
     // console.log(event)
@@ -13,27 +14,29 @@ function userGuess(event) {
     let wrong= document.getElementById("wrong")             //couldn't put .innerText here in the initial variable
     console.log(`wrong: ${wrong}`)
     let answer= document.querySelector("#answer")                    
-    let count=0                                                     //I had a while loop, but I wasn't "re-getting" the guess value. took while loop out
+                                                   //I had a while loop, but I wasn't "re-getting" the guess value. took while loop out
     if (guess < randomNumber) {
         if (count===0) {
-            guesses.innerText=`You have guessed:\n${guess}: TOO LOW!`       //I had .innertext. its innerText!!!
+            guesses.innerText=`You have guessed:\n${guess}: Too Low!`       //I had .innertext. its innerText!!!
             count++
+            wrong.innerText= "Guess again, but HIGHER!"
         }
         else {
         wrong.innerText= "Guess again, but HIGHER!"
         count++
-        guesses.innerText+=`\n${guess}: TOO LOW!`
+        guesses.innerText+=`\n${guess}: Too Low!`
         }
     }
     else if (guess > randomNumber) {
         if (count===0) {
-            guesses.innerText=`You have guessed:\n${guess}: TOO HIGH!`
+            guesses.innerText=`You have guessed:\n${guess}: Too High!`
             count++
+            wrong.innerText= "Guess again, but LOWER!"
         }
         else {
         wrong.innerText= "Guess again, but LOWER!"
         count++
-        guesses.innerText+=`\n${guess}: TOO HIGH!`
+        guesses.innerText+=`\n${guess}: Too High!`
         }
     }
    else {

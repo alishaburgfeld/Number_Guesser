@@ -7,20 +7,45 @@ body {
 
 h1 {
   font-weight: 400;
-  color:black;
+  color:rgb(138, 132, 133);
+  margin: 3rem;
+  margin-top: 6rem;
 }
 
-/* body {
+body {
   background-image: url("images/markus-spiske-iar-afB0QQw-unsplash.jpg");
   background-size: cover;
-} */
+}
 
 .main{
-  /* background-image: url("images/eric-tompkins-tRIw6cFSs2E-unsplash.jpg");
-  background-image: url("images/markus-spiske-iar-afB0QQw-unsplash.jpg");
-  background-size: cover; */
+  /* background-image: url("images/eric-tompkins-tRIw6cFSs2E-unsplash.jpg"); */
+  background-image: url("images/marek-piwnicki-P99yc6ozHOw-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
   max-width: 1000px;
-  min-height:600px;
+  min-height:800px;
+  /* justify-content: center;
+  align-items: center; */
+  border: 5px solid red;
+  margin-top: 9rem;
+  color:rgb(138, 132, 133);
+  border-radius:7%;
 
 }
 
+#wrong {
+  color: rgb(184, 18, 29)
+}
+
+input {
+  border-radius: .5rem;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  margin-right: 15px;
+  margin-top: 15px;
+  padding: .4rem;
+}
+
+input.placeholder {      /* doesn't appear to be working */
+  text-align: center;
+}
