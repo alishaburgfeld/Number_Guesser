@@ -10,9 +10,10 @@ function userGuess(event) {
     // console.log(guess)
     // console.log(typeof(guess))
     let guesses = document.getElementById("guesses")
-    console.log(`guesses: ${guesses}`)
+    // console.log(`guesses: ${guesses}`)
     let wrong= document.getElementById("wrong")             //couldn't put .innerText here in the initial variable
-    console.log(`wrong: ${wrong}`)
+    // console.log(`wrong: ${wrong}`)
+    let input=document.getElementById("input")
     let answer= document.querySelector("#answer")                    
                                                    //I had a while loop, but I wasn't "re-getting" the guess value. took while loop out
     if (guess < randomNumber) {
@@ -20,11 +21,13 @@ function userGuess(event) {
             guesses.innerText=`You have guessed:\n${guess}: Too Low!`       //I had .innertext. its innerText!!!
             count++
             wrong.innerText= "Guess again, but HIGHER!"
+            input.value=""
         }
         else {
         wrong.innerText= "Guess again, but HIGHER!"
         count++
         guesses.innerText+=`\n${guess}: Too Low!`
+        input.value=""
         }
     }
     else if (guess > randomNumber) {
@@ -32,14 +35,18 @@ function userGuess(event) {
             guesses.innerText=`You have guessed:\n${guess}: Too High!`
             count++
             wrong.innerText= "Guess again, but LOWER!"
+            input.value=""
         }
         else {
         wrong.innerText= "Guess again, but LOWER!"
         count++
         guesses.innerText+=`\n${guess}: Too High!`
+        input.value=""
         }
     }
    else {
+    input.value=""
+    wrong.innerText=""
     answer.innerText=`Congratulations, you guessed correctly! The number was ${randomNumber}`
    }
 }

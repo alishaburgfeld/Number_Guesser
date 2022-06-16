@@ -49,3 +49,7 @@ input {
 input.placeholder {      /* doesn't appear to be working */
   text-align: center;
 }
+
+#guesses {
+  line-height: 1.3;
+}
