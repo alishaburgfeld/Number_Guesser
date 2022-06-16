@@ -1,29 +1,31 @@
 function userGuess(event) {
     event.preventDefault();      //not working for some reason
-    console.log("Welcome to the Number Guessing Game! The computer has selected a number, it's your job to guess it!")
+    // console.log("Welcome to the Number Guessing Game! The computer has selected a number, it's your job to guess it!")
     let randomNumber=Math.floor(Math.random()*100)
-    console.log(`randomnumber: ${randomNumber}`)
-    let guess=document.getElementById("form")
-    console.log(`guess: ${guess.value}`)        //not working
+    // console.log(`randomnumber: ${randomNumber}`)
+    // let guess=document.getElementById("form")        //still don't really understand why its not this
+    // console.log(event)
+    let guess=event.target.elements[0].value
+    // console.log(guess)
     let guesses = document.querySelector("#guesses")
-    console.log(guesses)
+    console.log(`guesses: ${guesses}`)
     let wrong= document.getElementById("wrong").innertext
     console.log(`wrong: ${wrong}`)
     let answer= document.querySelector("#answer").innertext
     let count=0
-//     while (guess!==randomNumber) {
-//         if (guess < randomNumber) {
-//             if (count ==0) {
-//                 guesses.innertext="You have already guessed:"
-//             }
-//             wrong= "Guess again, but HIGHER!"
-//             guesses+=`${guess}: TOO LOW!`
-//         }
-//         else if (guess > randomNumber) {
-//             wrong="Guess again, but LOWER!"
-//             guesses+=`${guess}: TOO HIGH!`
-//         }
-//    }
+    while (guess!==randomNumber) {
+        if (guess < randomNumber) {
+            if (count===0) {
+                guesses.innertext="You have already guessed:"
+            }
+            wrong= "Guess again, but HIGHER!"
+            guesses+=`${guess}: TOO LOW!`
+        }
+        else if (guess > randomNumber) {
+            wrong="Guess again, but LOWER!"
+            guesses+=`${guess}: TOO HIGH!`
+        }
+   }
    answer=`Congratulations, you guessed correctly! The number was ${randomNumber}`
 }
 
