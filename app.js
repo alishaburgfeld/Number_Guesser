@@ -8,21 +8,24 @@ function userGuess(event) {
     let guess=Number(event.target.elements[0].value)
     // console.log(guess)
     // console.log(typeof(guess))
-    let guesses = document.getElementById("#guesses")
+    let guesses = document.getElementById("guesses")
     console.log(`guesses: ${guesses}`)
-    let wrong= document.getElementById("wrong").innertext
+    let wrong= document.getElementById("wrong").innerText
     console.log(`wrong: ${wrong}`)
-    let answer= document.querySelector("#answer").innertext
+    let answer= document.querySelector("#answer").innerText
     let count=0
     if (guess < randomNumber) {
         if (count===0) {
-            guesses.innertext="You have already guessed:"
+            guesses.innerText=`You have guessed:\n${guess}: TOO LOW!`
         }
         wrong= "Guess again, but HIGHER!"
         count++
-        guesses+=`${guess}: TOO LOW!`
+        guesses+=`\n${guess}: TOO LOW!`
     }
     else if (guess > randomNumber) {
+        if (count===0) {
+            guesses.innerText=`You have guessed:\n${guess}: TOO HIGH!`
+        }
         wrong="Guess again, but LOWER!"
         guesses+=`${guess}: TOO HIGH!`
     }
