@@ -5,27 +5,28 @@ function userGuess(event) {
     // console.log(`randomnumber: ${randomNumber}`)
     // let guess=document.getElementById("form")        //still don't really understand why its not this
     // console.log(event)
-    let guess=Number(event.target.elements[0].value)
+    let guess=int(event.target.elements[0].value)
     // console.log(guess)
     // console.log(typeof(guess))
-    let guesses = document.getElementById("#guesses")
+    let guesses = document.querySelector("#guesses")
     console.log(`guesses: ${guesses}`)
     let wrong= document.getElementById("wrong").innertext
     console.log(`wrong: ${wrong}`)
     let answer= document.querySelector("#answer").innertext
     let count=0
-    if (guess < randomNumber) {
-        if (count===0) {
-            guesses.innertext="You have already guessed:"
+    while (guess!==randomNumber) {
+        if (guess < randomNumber) {
+            if (count===0) {
+                guesses.innertext="You have already guessed:"
+            }
+            wrong= "Guess again, but HIGHER!"
+            guesses+=`${guess}: TOO LOW!`
         }
-        wrong= "Guess again, but HIGHER!"
-        count++
-        guesses+=`${guess}: TOO LOW!`
-    }
-    else if (guess > randomNumber) {
-        wrong="Guess again, but LOWER!"
-        guesses+=`${guess}: TOO HIGH!`
-    }
+        else if (guess > randomNumber) {
+            wrong="Guess again, but LOWER!"
+            guesses+=`${guess}: TOO HIGH!`
+        }
+   }
    answer=`Congratulations, you guessed correctly! The number was ${randomNumber}`
 }
 
