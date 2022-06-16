@@ -1,19 +1,24 @@
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8">
-    <title>TITLE</title>
+    <title>Number Guesser</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Your link to your CSS file -->
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="styles.css">
     <!-- Your Javascript file goes here -->
-    <script src="" async defer></script>
+    <script src="app.js" async defer></script>
   </head>
   <body>
     <!-- your HTML should go here -->
     <nav>
-      <h1>Let's Play the Guessing Number Game!</h1>
+      <h1>Welcome to the Number Guessing Game! The computer has selected a number between 1 and 100, it's your job to guess it!</h1>
     </nav>
-
-
+    <form id="form" onsubmit="userGuess(event)">
+      <input type="text" alt="input_a_number" placeholder="Input a number">
+      <button input type="submit" id="guess" onclick="userGuess()">Guess!</button>
+    </form>
+    <h2 id="wrong"></h2>
+    <h2 id="guesses"></h2>
+    <h2 id="answer"></h1>
   </body>
 </html>
