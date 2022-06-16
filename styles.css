@@ -6,6 +6,21 @@ body {
 }
 
 h1 {
-  font-weight: 400
+  font-weight: 400;
+  color:white;
+  font-size: 3rem;
+}
+
+body {
+  background-image: url("images/markus-spiske-iar-afB0QQw-unsplash.jpg");
+  background-size: cover;
+}
+
+.main{
+  /* background-image: url("images/eric-tompkins-tRIw6cFSs2E-unsplash.jpg");
+  background-size: cover; */
+  max-width: 1000px;
+  min-height:600px;
+
 }
 

@@ -1,9 +1,9 @@
 function userGuess(event) {
-    // event.preventDefault();      not working for some reason
+    event.preventDefault();      //not working for some reason
     console.log("Welcome to the Number Guessing Game! The computer has selected a number, it's your job to guess it!")
     let randomNumber=Math.floor(Math.random()*100)
     console.log(`randomnumber: ${randomNumber}`)
-    let guess=document.getElementById("guess")
+    let guess=document.getElementById("form")
     console.log(`guess: ${guess.value}`)        //not working
     let guesses = document.querySelector("#guesses")
     console.log(guesses)
